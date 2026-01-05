@@ -31,11 +31,45 @@ Chain-of-thought prompting encourages the model to reason step by step, rather t
 
 
 ## **3. Self-Improvement**
+In self-improvement prompting, the model first generates an initial answer and then evaluates and refines that answer to make it more accurate or complete. This strategy mimics a human reviewing their own work to spot mistakes or add missing details. It is especially helpful for creative tasks, explanations, or situations where the first output might be partially correct but can be enhanced. Self-improvement allows the model to iteratively converge toward a higher-quality response.
 
-
-
+        What it is: The model reflects on its own answer and tries to improve it.
+        Example:
+                Model generates an answer.
+                Model reviews the answer and refines it.
+        Use case: When quality or correctness is critical.
+        Why it helps: Encourages iterative correction instead of stopping at the first output.
 ## **4. Self-Debate**
+Self-debate involves the model exploring multiple perspectives by arguing both for and against a proposition before settling on a final answer. This approach is useful for ethical questions, controversial topics, or complex reasoning tasks where a single viewpoint might be biased or incomplete. By weighing conflicting arguments, the model can produce a more balanced, nuanced response. It essentially simulates an internal dialogue, allowing the model to surface different angles and strengthen its conclusions. 
 
-
+        What it is: The model plays devil’s advocate against itself to consider multiple perspectives before concluding.
+        Example:
+                Prompt: "Debate both sides: Is AI more helpful than harmful?"
+                Model lists arguments for both, then synthesizes a conclusion.
+        Use case: Ethical reasoning, nuanced topics, ambiguous questions.
+        Why it helps: Reduces bias and exposes weak reasoning.
 
 ## **5. Self-Consistency**
+Self-consistency builds reliability by generating multiple reasoning paths for the same question and then choosing the answer that occurs most often among those paths. This approach helps reduce errors caused by a single flawed chain of reasoning. It’s especially effective for complex problems or ambiguous tasks where the model might otherwise produce inconsistent answers. Self-consistency aggregates the “wisdom” of multiple attempts, increasing the likelihood that the final answer is both accurate and robust.
+
+
+        What it is: The model generates multiple reasoning paths and chooses the answer that appears most often.
+        Example:
+                Prompt: "Solve this puzzle step by step." (run 5–10 times)
+                Model produces several step-by-step solutions, then picks the most consistent answer.
+        Use case: Complex reasoning tasks where a single path may be misleading.
+        Why it helps: Aggregates reasoning, making the output more reliable.
+
+
+
+# **Summary**
+
+        Vanilla zero-shot → straight answer
+
+        CoT → step-by-step reasoning
+
+        Self-improvement → answer, then refine
+
+        Self-debate → consider multiple perspectives
+
+        Self-consistency → pick the most consistent reasoning across multiple tries
